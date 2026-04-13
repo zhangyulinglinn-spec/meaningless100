@@ -1,400 +1,400 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>无意义100问｜填写页</title>
-  <style>
-    :root {
-      --bg: #f6f3ef;
-      --card: #fffdfa;
-      --ink: #222;
-      --muted: #6b6b6b;
-      --line: #ddd3c7;
-      --accent: #6e5b4b;
-      --accent2: #a3886b;
-      --shadow: 0 10px 30px rgba(0,0,0,.06);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px 16px 96px;
-    }
-    .hero {
-      background: linear-gradient(180deg, #fffdfa, #f9f5ef);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 22px;
-      position: sticky;
-      top: 12px;
-      z-index: 10;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin: 0 0 6px;
-      font-size: 28px;
-    }
-    .sub {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-    button, .small-input {
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      border-radius: 12px;
-      padding: 10px 14px;
-      font-size: 14px;
-    }
-    button {
-      cursor: pointer;
-      transition: .15s ease;
-    }
-    button:hover { transform: translateY(-1px); }
-    .primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-    .stats {
-      margin-left: auto;
-      color: var(--muted);
-      font-size: 14px;
-      white-space: nowrap;
-    }
-    .progress {
-      width: 100%;
-      height: 10px;
-      background: #ede5db;
-      border-radius: 999px;
-      overflow: hidden;
-      margin-top: 14px;
-    }
-    .bar {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, var(--accent2), var(--accent));
-      transition: width .2s ease;
-    }
-    .tips {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 8px;
-    }
-    .list {
-      display: grid;
-      gap: 14px;
-    }
-    .q {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      padding: 14px;
-    }
-    .q-head {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-    .num {
-      min-width: 36px;
-      height: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      background: #f0e8dd;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .title {
-      font-size: 18px;
-      font-weight: 600;
-      padding-top: 3px;
-    }
-    textarea {
-      width: 100%;
-      min-height: 88px;
-      resize: vertical;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      font: inherit;
-      background: #fff;
-    }
-    textarea:focus, input:focus {
-      outline: none;
-      border-color: var(--accent2);
-      box-shadow: 0 0 0 3px rgba(163,136,107,.15);
-    }
-    .footer {
-      margin-top: 22px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .searchline {
-      display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;
-    }
-    .searchline input { flex:1; min-width: 220px; }
-    .hidden { display:none !important; }
-    @media (max-width: 720px) {
-      .hero { position: static; }
-      .stats { width: 100%; margin-left: 0; }
-      h1 { font-size: 24px; }
-      .title { font-size: 16px; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>无意义100问</title>
+<style>
+  :root {
+    --bg: #f7f3ee;
+    --card: #fffdf9;
+    --text: #1f1a17;
+    --muted: #776b62;
+    --line: #e4d8cb;
+    --accent: #6b4f3a;
+    --accent-2: #a67c52;
+    --shadow: 0 10px 30px rgba(61, 43, 26, 0.08);
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+      "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(166,124,82,0.08), transparent 28%),
+      linear-gradient(180deg, #faf7f2, var(--bg));
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .container {
+    width: min(920px, calc(100vw - 32px));
+    margin: 28px auto 56px;
+  }
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 24px 22px 18px;
+    position: sticky;
+    top: 10px;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+  }
+  .sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+    align-items: center;
+  }
+  button {
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--text);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .18s ease;
+  }
+  button:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent-2);
+  }
+  button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+  .stats {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .bar-wrap {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: #efe5da;
+    overflow: hidden;
+    margin-top: 14px;
+  }
+  .bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: width .25s ease;
+  }
+  .list {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .q {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+  }
+  .q-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .num {
+    flex: 0 0 auto;
+    min-width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: #f2e6d8;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    padding-top: 5px;
+  }
+  textarea {
+    width: 100%;
+    min-height: 92px;
+    resize: vertical;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--text);
+    background: #fff;
+    outline: none;
+  }
+  textarea:focus {
+    border-color: var(--accent-2);
+    box-shadow: 0 0 0 4px rgba(166,124,82,0.12);
+  }
+  .answer-text {
+    white-space: pre-wrap;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    min-height: 54px;
+  }
+  .hint {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .footer {
+    color: var(--muted);
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13px;
+  }
+  .readonly textarea,
+  .readonly #shareLink,
+  .readonly #exportTxt,
+  .readonly #clearAll,
+  .readonly .hint {
+    display: none !important;
+  }
+  @media (max-width: 700px) {
+    .container { width: min(100vw - 20px, 920px); }
+    .hero { padding: 18px 16px 16px; position: static; }
+    .stats { margin-left: 0; width: 100%; }
+    .title { font-size: 17px; }
+    .num { min-width: 38px; height: 38px; }
+  }
+</style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
     <section class="hero">
-      <h1>无意义100问</h1>
-      <div class="sub">方便填写版。内容会自动保存在当前浏览器里。</div>
+      <h1 id="pageTitle">无意义100问</h1>
+      <p class="sub" id="pageSub">填写后会自动保存在当前浏览器。可以导出 TXT，也可以生成分享链接。</p>
       <div class="toolbar">
-        <button class="primary" id="exportTxt">导出 TXT</button>
-        <button id="exportJson">导出 JSON</button>
-        <button id="copyAll">复制全部</button>
+        <button class="primary" id="shareLink">生成分享链接</button>
+        <button id="exportTxt">导出 TXT</button>
         <button id="clearAll">清空所有答案</button>
         <div class="stats"><span id="answered">0</span> / 100 已填写</div>
       </div>
-      <div class="searchline">
-        <input class="small-input" id="search" type="text" placeholder="搜索题目关键词，如“爱情 / 城市 / 电影”">
-      </div>
-      <div class="progress"><div class="bar" id="bar"></div></div>
-      <div class="tips">支持自动保存、搜索过滤、导出文本。直接把这个 HTML 文件发给朋友也能用。</div>
+      <div class="bar-wrap"><div class="bar" id="bar"></div></div>
+      <div class="hint">分享链接只会带上已填写的问题；朋友打开后看到的是只读页面。</div>
     </section>
 
     <main class="list" id="list"></main>
 
-    <div class="footer">Made for easy filling · local autosave only</div>
+    <div class="footer">无意义100问 by cookiemonster</div>
   </div>
 
-  <script>
-    const questions = [
-      "下雪天还是下雨天",
-      "喜欢的一个气味",
-      "说一个你最疯狂的幻想",
-      "四选一：春天/夏天/秋天/冬天",
-      "你对自己的定位",
-      "有什么很遗憾的事情吗",
-      "怕鬼吗",
-      "说出一项你很拿手的技能",
-      "早睡觉 or 熬夜党",
-      "最不想成为的一种人",
-      "近期让你开心的三件小事",
-      "想让圣诞老人送给你的一件礼物",
-      "幸运数字是什么",
-      "说一句无厘头的话吧",
-      "第一次心动的时间",
-      "很容易让你流泪的事情是什么",
-      "把自己比作一种鸟类",
-      "推荐一首你喜欢的歌吧",
-      "周末出行你选博物馆/公园/商场？",
-      "说三个雷点",
-      "此刻，下一件你要做的事情是什么",
-      "森林 or 海洋",
-      "考过最低分数的学科",
-      "读过最悲伤的一个童话故事",
-      "最想旅行的地方",
-      "你更会思考过去/当下/未来",
-      "形容一下你心中的完美晚餐",
-      "描述一个你做过的离奇的梦",
-      "形式主义 or 实用主义",
-      "可以查看任何一个事实，你选择？",
-      "你容易入睡吗",
-      "如果当初（自由发挥）",
-      "你认为的活着的意义",
-      "最喜欢的一种花",
-      "谈谈你的情感观",
-      "近期目标",
-      "能思考决不动笔 or 能动笔决不思考",
-      "你想活到几岁",
-      "一件愿意一直坚持下去的事情",
-      "最讨厌做的一类家务",
-      "二十四节气中最喜欢的一个",
-      "乐观 or 悲观主义者",
-      "想和谁一起跨年",
-      "向大家推荐几款好吃的小零食",
-      "有什么觉得很浪漫的事情吗",
-      "喜欢听的音乐类型是什么",
-      "说说你最平常一天的作息",
-      "说出一个看完感触很深的电影",
-      "你的性取向是",
-      "有很挂念的人吗",
-      "对未来的规划是什么",
-      "最希望收到的生日礼物是什么",
-      "现在心情如何",
-      "你的遗言想说点什么",
-      "做过最冲动的事情",
-      "日久生情 or 一见钟情",
-      "学生时代最快乐的三件事",
-      "你认为自己脑袋是由什么组成的",
-      "和过去的自己说几句话",
-      "有喜欢收集什么东西的习惯吗",
-      "朋友对你来说的意义",
-      "把爱具象化描述成三件物品",
-      "最喜欢的三种食物原材料",
-      "夏夜看星星 or 冬日堆雪人",
-      "上一次笑是什么时候",
-      "你的 MBTI 是什么",
-      "距离下一年还有几天",
-      "一部可以 n 刷的番/动漫",
-      "假如有一天你可以飞了，是因为？",
-      "元素五选一：金/木/水/火/风",
-      "现在饿吗",
-      "让你印象最深刻的一个瞬间",
-      "如果可以，你想穿越到哪个年代",
-      "描述一下理想的被单样式",
-      "喜欢的三种颜色",
-      "分享一个社死经历吧",
-      "怕冷 or 怕热",
-      "描述一个你认为很自由的画面",
-      "有什么恐惧症吗（巨物、深海）",
-      "你名字的寓意是什么",
-      "使用最多的软件是什么",
-      "所居住的城市给你的印象是什么",
-      "和恋人相处的理想状态",
-      "和朋友相处的理想状态",
-      "说说你所渴望发生的一个时刻",
-      "窗外天气怎么样",
-      "甜粽子 or 咸粽子",
-      "分享一个生活中温暖/美好的瞬间",
-      "三个意象描述自己",
-      "为现在努力的程度打个分 1-10",
-      "你认为人生的终极目标是什么",
-      "喝奶茶的甜度和冰度",
-      "描述一个让你感到舒适的空间",
-      "日出 or 日落更让你心动",
-      "现在几点啦",
-      "分享一段独特的经历吧",
-      "你能够很好地接受离别吗",
-      "想好下一顿吃什么了吗",
-      "描述一下你的理想型",
-      "相信爱会永存吗"
-    ];
+<script>
+const questions = ['下雪天还是下雨天', '喜欢的一个气味', '说一个你最疯狂的幻想', '四选一：春天/夏天/秋天/冬天', '你对自己的定位', '有什么很遗憾的事情吗', '怕鬼吗', '说出一项你很拿手的技能', '早睡觉 or 熬夜觉', '最不想成为的一种人', '近期让你开心的三件小事', '想让圣诞老人送给你的一件礼物', '幸运数字是什么', '说一句无厘头的话吧', '第一次心动的时间', '很容易让你流泪的事情是什么', '把自己比作一种鸟类', '推荐一首你喜欢的歌吧', '周末出行你选博物馆/公园/商场？', '说三个雷点', '此刻，下一件你要做的事情是什么', '森林 or 海洋', '考过最低分数的学科', '读过最悲伤的一个童话故事', '最想旅行的地方', '你更会思考过去/当下/未来', '形容一下你心中的完美晚餐', '描述一个你做过的离奇的梦', '形式主义 or 实用主义', '可以查看任何一个事实，你选择？', '你容易入睡吗', '如果当初_（自由发挥）', '你认为的活着的意义', '最喜欢的一种花', '谈谈你的情感观', '近期目标', '能思考决不动笔 or 能动笔决不思考', '你想活到几岁', '一件愿意一直坚持下去的事情', '最讨厌做的一类家务', '二十四节气中最喜欢的一个', '乐观 or 悲观主义者', '想和谁一起跨年', '向大家推荐几款好吃的小零食', '有什么觉得很浪漫的事情吗', '喜欢听的音乐类型是什么', '说说你最平常一天的作息', '说出一个看完感触很深的电影', '你的性取向是', '有很挂念的人吗', '对未来的规划是什么', '最希望收到的生日礼物是什么', '现在心情如何', '你的遗言想说点什么', '做过最冲动的事情', '日久生情 or 一见钟情', '学生时代最快乐的三件事', '你认为自己脑袋是由什么组成的', '和过去的自己说几句话', '有喜欢收集什么东西的习惯吗', '朋友对你来说的意义', '把爱具象化描述成三件物品', '最喜欢的三种食物原材料', '夏夜看星星 or 冬日堆雪人', '上一次笑是什么时候', '你的 MBTI 是什么', '距离下一年还有几天', '一部可以 n 刷的番/动漫', '假如有一天你可以飞了，是因为？', '元素五选一：金/木/水/火/风', '现在饿吗', '让你印象最深刻的一个瞬间', '如果可以，你想穿越到哪个年代', '描述一下理想的被单样式', '喜欢的三种颜色', '分享一个社死经历吧', '怕冷 or 怕热', '描述一个你认为很自由的画面', '有什么恐惧症吗（巨物、深海）', '你名字的寓意是什么', '使用最多的软件是什么', '所居住的城市给你的印象是什么', '和恋人相处的理想状态', '和朋友相处的理想状态', '说说你所渴望发生的一个时刻', '窗外天气怎么样', '甜粽子 or 咸粽子', '分享一个生活中温暖/美好的瞬间', '三个意象描述自己', '为现在努力的程度打个分数 1-10', '你认为人生的终极目标是什么', '喝奶茶的甜度和冰度', '描述一个让你感到舒适的空间', '日出 or 日落更让你心动', '现在几点啦', '分享一段独特的经历吧', '你能够很好的接受离别吗', '想好下一顿吃什么了吗', '描述一下你的理想型', '相信爱会永存吗'];
+const storageKey = 'meaningless100_share_only_v1';
+const list = document.getElementById('list');
+const answeredEl = document.getElementById('answered');
+const bar = document.getElementById('bar');
+const shareMode = location.hash.startsWith('#share=');
 
-    const list = document.getElementById('list');
-    const answeredEl = document.getElementById('answered');
-    const bar = document.getElementById('bar');
-    const storageKey = 'meaningless100Answers_v1';
-    const searchInput = document.getElementById('search');
+let answers = shareMode
+  ? decodeSharedAnswers(location.hash.slice(7))
+  : JSON.parse(localStorage.getItem(storageKey) || '{}');
 
-    let answers = JSON.parse(localStorage.getItem(storageKey) || '{}');
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
 
-    function render() {
-      list.innerHTML = '';
-      const keyword = searchInput.value.trim();
-      questions.forEach((q, i) => {
-        const n = i + 1;
-        const matched = !keyword || q.includes(keyword) || String(n).includes(keyword);
-        const card = document.createElement('section');
-        card.className = 'q' + (matched ? '' : ' hidden');
-        card.innerHTML = `
-          <div class="q-head">
-            <div class="num">${n}</div>
-            <div class="title">${q}</div>
-          </div>
-          <textarea data-index="${n}" placeholder="在这里填写你的回答...">${escapeHtml(answers[n] || '')}</textarea>
-        `;
-        list.appendChild(card);
-      });
-      bindTextareas();
+function getFilledAnswersOnly() {
+  const filled = {};
+  questions.forEach((q, i) => {
+    const n = i + 1;
+    const value = (answers[n] || '').trim();
+    if (value) filled[n] = value;
+  });
+  return filled;
+}
+
+function encodeSharedAnswers(data) {
+  return encodeURIComponent(JSON.stringify(data));
+}
+
+function decodeSharedAnswers(encoded) {
+  try {
+    return JSON.parse(decodeURIComponent(encoded));
+  } catch {
+    return {};
+  }
+}
+
+function buildShareLink() {
+  const filled = getFilledAnswersOnly();
+  const encoded = encodeSharedAnswers(filled);
+  return `${location.origin}${location.pathname}#share=${encoded}`;
+}
+
+function buildTxt() {
+  const filled = getFilledAnswersOnly();
+  const lines = ['无意义100问', ''];
+  questions.forEach((q, i) => {
+    const n = i + 1;
+    const a = (filled[n] || '').trim();
+    if (a) {
+      lines.push(`${n}. ${q}`);
+      lines.push(a);
+      lines.push('');
+    }
+  });
+  if (lines.length === 2) lines.push('（还没有填写任何答案）');
+  return lines.join('\n');
+}
+
+function download(filename, text) {
+  const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function updateStats() {
+  const count = Object.keys(getFilledAnswersOnly()).length;
+  answeredEl.textContent = count;
+  bar.style.width = (count / questions.length * 100).toFixed(1) + '%';
+}
+
+function bindTextareas() {
+  list.querySelectorAll('textarea').forEach(el => {
+    el.addEventListener('input', (e) => {
+      const idx = e.target.dataset.index;
+      answers[idx] = e.target.value;
+      localStorage.setItem(storageKey, JSON.stringify(answers));
       updateStats();
-    }
-
-    function escapeHtml(text) {
-      return text
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;');
-    }
-
-    function bindTextareas() {
-      document.querySelectorAll('textarea').forEach(el => {
-        autoResize(el);
-        el.addEventListener('input', () => {
-          answers[el.dataset.index] = el.value;
-          localStorage.setItem(storageKey, JSON.stringify(answers));
-          autoResize(el);
-          updateStats();
-        });
-      });
-    }
-
-    function autoResize(el) {
-      el.style.height = 'auto';
-      el.style.height = Math.max(88, el.scrollHeight) + 'px';
-    }
-
-    function updateStats() {
-      const count = questions.filter((_, i) => (answers[i + 1] || '').trim()).length;
-      answeredEl.textContent = count;
-      bar.style.width = (count / questions.length * 100).toFixed(1) + '%';
-    }
-
-    function buildTxt() {
-      return questions.map((q, i) => {
-        const n = i + 1;
-        const a = (answers[n] || '').trim();
-        return `${n}. ${q}\n${a || '（未填写）'}`;
-      }).join('\n\n');
-    }
-
-    function download(filename, content, type) {
-      const blob = new Blob([content], { type });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename;
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    document.getElementById('exportTxt').addEventListener('click', () => {
-      download('无意义100问_回答.txt', buildTxt(), 'text/plain;charset=utf-8');
     });
+  });
+}
 
-    document.getElementById('exportJson').addEventListener('click', () => {
-      const payload = questions.map((q, i) => ({ number: i + 1, question: q, answer: answers[i + 1] || '' }));
-      download('无意义100问_回答.json', JSON.stringify(payload, null, 2), 'application/json;charset=utf-8');
-    });
+function renderEditor() {
+  list.innerHTML = '';
+  questions.forEach((q, i) => {
+    const n = i + 1;
+    const card = document.createElement('section');
+    card.className = 'q';
+    card.innerHTML = `
+      <div class="q-head">
+        <div class="num">${n}</div>
+        <div class="title">${escapeHtml(q)}</div>
+      </div>
+      <textarea data-index="${n}" placeholder="在这里填写你的回答...">${escapeHtml(answers[n] || '')}</textarea>
+    `;
+    list.appendChild(card);
+  });
+  bindTextareas();
+  updateStats();
+}
 
-    document.getElementById('copyAll').addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(buildTxt());
-        alert('已复制全部内容');
-      } catch {
-        alert('复制失败，请使用导出 TXT');
-      }
-    });
+function renderShare() {
+  document.body.classList.add('readonly');
+  document.getElementById('pageTitle').textContent = '无意义100问｜分享页';
+  document.getElementById('pageSub').textContent = '这个页面只显示已填写的回答。';
 
-    document.getElementById('clearAll').addEventListener('click', () => {
-      if (!confirm('确定要清空所有答案吗？此操作不可撤销。')) return;
-      answers = {};
-      localStorage.removeItem(storageKey);
-      render();
-    });
+  list.innerHTML = '';
+  const filled = questions
+    .map((q, i) => {
+      const n = i + 1;
+      return { n, q, a: (answers[n] || '').trim() };
+    })
+    .filter(item => item.a);
 
-    searchInput.addEventListener('input', render);
-    render();
-  </script>
+  answeredEl.textContent = filled.length;
+  bar.style.width = (filled.length / questions.length * 100).toFixed(1) + '%';
+
+  if (!filled.length) {
+    const card = document.createElement('section');
+    card.className = 'q';
+    card.innerHTML = `
+      <div class="q-head">
+        <div class="num">!</div>
+        <div class="title">这个分享链接里没有可显示的回答</div>
+      </div>
+      <div class="answer-text">可能是链接内容损坏，或者发送时被截断了。</div>
+    `;
+    list.appendChild(card);
+    return;
+  }
+
+  filled.forEach(item => {
+    const card = document.createElement('section');
+    card.className = 'q';
+    card.innerHTML = `
+      <div class="q-head">
+        <div class="num">${item.n}</div>
+        <div class="title">${escapeHtml(item.q)}</div>
+      </div>
+      <div class="answer-text">${escapeHtml(item.a)}</div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+document.getElementById('shareLink').addEventListener('click', async () => {
+  const count = Object.keys(getFilledAnswersOnly()).length;
+  if (!count) {
+    alert('你还没有填写任何答案。');
+    return;
+  }
+
+  const link = buildShareLink();
+
+  if (link.length > 6000) {
+    alert('这个分享链接已经很长了，部分平台里打开可能不稳定。');
+  }
+
+  try {
+    await navigator.clipboard.writeText(link);
+    alert('分享链接已复制。');
+  } catch {
+    prompt('复制失败，请手动复制下面的链接：', link);
+  }
+});
+
+document.getElementById('exportTxt').addEventListener('click', () => {
+  download('无意义100问.txt', buildTxt());
+});
+
+document.getElementById('clearAll').addEventListener('click', () => {
+  if (!confirm('确定要清空所有答案吗？此操作不可撤销。')) return;
+  answers = {};
+  localStorage.removeItem(storageKey);
+  renderEditor();
+});
+
+if (shareMode) {
+  renderShare();
+} else {
+  renderEditor();
+}
+</script>
 </body>
 </html>
